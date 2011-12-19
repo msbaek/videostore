@@ -20,7 +20,7 @@ public class VideoStoreTest {
                         "Amount owed is 9.0\n" +
                         "You earned 2 frequent renter points",
                 customer.statement());
-        assertEquals(9.0, customer.getTotal());
+        assertEquals(9.0d, customer.getTotal(), 0);
         assertEquals(2, customer.getFrequentRenterPoints());
     }
 
