@@ -6,15 +6,17 @@ import static org.junit.Assert.assertEquals;
 public class VideoStoreTest {
     private Statement statement;
     private final double DELTA = .001;
+    private Movie newReleaseMovie;
 
     @Before
     public void setUp() {
         statement = new Statement("Customer");
+        newReleaseMovie = new Movie("New Release", Movie.NEW_RELEASE);
     }
 
     @Test
     public void testSingleNewReleaseStatementTotals() {
-        statement.addRental(new Rental(new Movie("The Cell", Movie.NEW_RELEASE), 3));
+        statement.addRental(new Rental(newReleaseMovie, 3));
         statement.generate();
         assertEquals(9.0d, statement.getTotal(), DELTA);
         assertEquals(2, statement.getFrequentRenterPoints());
@@ -22,7 +24,7 @@ public class VideoStoreTest {
 
     @Test
     public void testDualNewReleaseStatementTotals() {
-        statement.addRental(new Rental(new Movie("The Cell", Movie.NEW_RELEASE), 3));
+        statement.addRental(new Rental(newReleaseMovie, 3));
         statement.addRental(new Rental(new Movie("The Tigger Movie", Movie.NEW_RELEASE), 3));
         statement.generate();
         assertEquals(18.0, statement.getTotal(), DELTA);
