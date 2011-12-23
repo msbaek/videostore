@@ -26,6 +26,16 @@ public class Statement {
         initialize();
         String statementText = header();
 
+        statementText = rentalLines(statementText);
+
+        // add footer lines
+        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        statementText += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+
+        return statementText;
+    }
+
+    private String rentalLines(String statementText) {
         for(Rental rental : rentals) {
             double thisAmount = 0;
 
@@ -56,11 +66,6 @@ public class Statement {
             statementText += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
-
-        // add footer lines
-        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        statementText += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
-
         return statementText;
     }
 
