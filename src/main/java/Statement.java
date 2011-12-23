@@ -29,7 +29,10 @@ public class Statement {
     }
 
     private String footer() {
-        return "Amount owed is " + String.valueOf(totalAmount) + "\nYou earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        return String.format(
+                "Amount owed is %.1f\n" +
+                        "You earned %d frequent renter points",
+                totalAmount, frequentRenterPoints);
     }
 
     private String rentalLines() {
