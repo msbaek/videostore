@@ -39,7 +39,7 @@ public class Statement {
 
     private String rentalLines() {
         String rentalLines = "";
-        for(Rental rental : rentals) {
+        for (Rental rental : rentals) {
             rentalLines += rentalLine(rental);
         }
         return rentalLines;
@@ -61,27 +61,27 @@ public class Statement {
         int frequentRenterPoints = 1;
         // add bonus for a two day new release rental
         if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-        frequentRenterPoints++;
+            frequentRenterPoints++;
         return frequentRenterPoints;
     }
 
     private double determineAmount(Rental rental) {
         double rentalAmount = 0;
         switch (rental.getMovie().getPriceCode()) {
-        case Movie.REGULAR:
-            rentalAmount += 2;
-            if (rental.getDaysRented() > 2)
-                rentalAmount += (rental.getDaysRented() - 2) * 1.5;
-            break;
-        case Movie.NEW_RELEASE:
-            rentalAmount += rental.getDaysRented() * 3;
-            break;
-        case Movie.CHILDRENS:
-            rentalAmount += 1.5;
-            if (rental.getDaysRented() > 3)
-                rentalAmount += (rental.getDaysRented() - 3) * 1.5;
-            break;
-    }
+            case Movie.REGULAR:
+                rentalAmount += 2;
+                if (rental.getDaysRented() > 2)
+                    rentalAmount += (rental.getDaysRented() - 2) * 1.5;
+                break;
+            case Movie.NEW_RELEASE:
+                rentalAmount += rental.getDaysRented() * 3;
+                break;
+            case Movie.CHILDRENS:
+                rentalAmount += 1.5;
+                if (rental.getDaysRented() > 3)
+                    rentalAmount += (rental.getDaysRented() - 3) * 1.5;
+                break;
+        }
         return rentalAmount;
     }
 
