@@ -20,6 +20,10 @@ public class Rental {
     }
 
     double determineAmount() {
+        return determineAmount(daysRented);
+    }
+
+    double determineAmount(int daysRented ) {
         double rentalAmount = 0;
         switch (getMovie().getPriceCode()) {
             case Movie.REGULAR:
