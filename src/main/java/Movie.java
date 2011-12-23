@@ -45,7 +45,7 @@ public class Movie {
     }
 
     int determineFrequentRentalPoint(int daysRented) {
-        boolean bonusIsEarned = (pricecode == NEW_RELEASE) && daysRented > 1;
+        boolean bonusIsEarned = (pricecode == NEW_RELEASE && daysRented > 1);
         if (bonusIsEarned)
             return 2;
         return 1;
