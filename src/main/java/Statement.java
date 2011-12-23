@@ -47,7 +47,7 @@ public class Statement {
 
     private String rentalLine(Rental rental) {
         String rentalLine = "";
-        double thisAmount = determineAmount(rental);
+        double rentalAmount = determineAmount(rental);
 
         // add frequent renter points
         frequentRenterPoints++;
@@ -56,8 +56,8 @@ public class Statement {
             frequentRenterPoints++;
 
         // show figures for this rental
-        rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
-        totalAmount += thisAmount;
+        rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
+        totalAmount += rentalAmount;
         return rentalLine;
     }
 
