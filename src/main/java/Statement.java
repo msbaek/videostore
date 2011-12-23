@@ -57,7 +57,8 @@ public class Statement {
     }
 
     private int determineFrequentRentalPoint(Rental rental) {
-        if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
+        boolean bonusIsEarned = (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1;
+        if (bonusIsEarned)
             return 2;
         return 1;
     }
