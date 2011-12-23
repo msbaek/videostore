@@ -24,7 +24,7 @@ public class Statement {
 
     public String generate() {
         initialize();
-        String statementText = "Rental Record for " + getCustomerName() + "\n";
+        String statementText = header();
 
         for(Rental rental : rentals) {
             double thisAmount = 0;
@@ -62,6 +62,10 @@ public class Statement {
         statementText += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 
         return statementText;
+    }
+
+    private String header() {
+        return "Rental Record for " + getCustomerName() + "\n";
     }
 
     private void initialize() {
