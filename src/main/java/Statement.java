@@ -65,7 +65,7 @@ public class Statement {
     }
 
     private String header() {
-        return "Rental Record for " + getCustomerName() + "\n";
+        return String.format("Rental Record for %s\n", customerName);
     }
 
     private void initialize() {
