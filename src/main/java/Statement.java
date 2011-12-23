@@ -48,7 +48,7 @@ public class Statement {
     private String rentalLine(Rental rental) {
         String rentalLine = "";
         double rentalAmount = determineAmount(rental);
-        determineFrequentRentalPoint(rental);
+        frequentRenterPoints += determineFrequentRentalPoint(rental);
 
         // show figures for this rental
         rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
@@ -56,12 +56,14 @@ public class Statement {
         return rentalLine;
     }
 
-    private void determineFrequentRentalPoint(Rental rental) {
+    private int determineFrequentRentalPoint(Rental rental) {
         // add frequent renter points
+        int frequentRenterPoints = 0;
         frequentRenterPoints++;
         // add bonus for a two day new release rental
         if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
         frequentRenterPoints++;
+        return frequentRenterPoints;
     }
 
     private double determineAmount(Rental rental) {
