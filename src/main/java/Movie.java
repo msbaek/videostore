@@ -24,9 +24,9 @@ public class Movie {
         return title;
     }
 
-    double determineAmount(int daysRented, Rental rental) {
+    double determineAmount(int daysRented) {
         double rentalAmount = 0;
-        switch (rental.getMovie().getPriceCode()) {
+        switch (getPriceCode()) {
             case REGULAR:
                 rentalAmount += 2;
                 if (daysRented > 2)

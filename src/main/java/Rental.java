@@ -20,7 +20,7 @@ public class Rental {
     }
 
     double determineAmount() {
-        return movie.determineAmount(daysRented, this);
+        return movie.determineAmount(daysRented);
     }
 
     int determineFrequentRentalPoint() {
