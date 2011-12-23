@@ -26,7 +26,7 @@ public class Statement {
         initialize();
         String statementText = header();
 
-        statementText = rentalLines(statementText);
+        statementText += rentalLines();
 
         // add footer lines
         statementText += "Amount owed is " + String.valueOf(totalAmount) + "\n";
@@ -35,7 +35,8 @@ public class Statement {
         return statementText;
     }
 
-    private String rentalLines(String statementText) {
+    private String rentalLines() {
+        String statementText = "";
         for(Rental rental : rentals) {
             double thisAmount = 0;
 
