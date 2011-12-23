@@ -36,7 +36,7 @@ public class Statement {
     }
 
     private String rentalLines() {
-        String statementText = "";
+        String rentalLines = "";
         for(Rental rental : rentals) {
             double thisAmount = 0;
 
@@ -64,10 +64,10 @@ public class Statement {
                 frequentRenterPoints++;
 
             // show figures for this rental
-            statementText += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+            rentalLines += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
-        return statementText;
+        return rentalLines;
     }
 
     private String header() {
