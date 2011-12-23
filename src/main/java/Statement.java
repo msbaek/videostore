@@ -25,13 +25,13 @@ public class Statement {
     public String generate() {
         initialize();
         String statementText = header();
-
         statementText += rentalLines();
-
-        // add footer lines
-        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\nYou earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
-
+        statementText += footer();
         return statementText;
+    }
+
+    private String footer() {
+        return "Amount owed is " + String.valueOf(totalAmount) + "\nYou earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
     }
 
     private String rentalLines() {
