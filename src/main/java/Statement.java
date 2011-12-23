@@ -57,12 +57,9 @@ public class Statement {
     }
 
     private int determineFrequentRentalPoint(Rental rental) {
-        // add frequent renter points
-        int frequentRenterPoints = 1;
-        // add bonus for a two day new release rental
         if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-            frequentRenterPoints++;
-        return frequentRenterPoints;
+            return 2;
+        return 1;
     }
 
     private double determineAmount(Rental rental) {
