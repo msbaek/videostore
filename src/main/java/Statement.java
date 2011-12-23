@@ -62,23 +62,23 @@ public class Statement {
     }
 
     private double determineAmount(Rental rental) {
-        double thisAmount = 0;
+        double rentalAmount = 0;
         switch (rental.getMovie().getPriceCode()) {
         case Movie.REGULAR:
-            thisAmount += 2;
+            rentalAmount += 2;
             if (rental.getDaysRented() > 2)
-                thisAmount += (rental.getDaysRented() - 2) * 1.5;
+                rentalAmount += (rental.getDaysRented() - 2) * 1.5;
             break;
         case Movie.NEW_RELEASE:
-            thisAmount += rental.getDaysRented() * 3;
+            rentalAmount += rental.getDaysRented() * 3;
             break;
         case Movie.CHILDRENS:
-            thisAmount += 1.5;
+            rentalAmount += 1.5;
             if (rental.getDaysRented() > 3)
-                thisAmount += (rental.getDaysRented() - 3) * 1.5;
+                rentalAmount += (rental.getDaysRented() - 3) * 1.5;
             break;
     }
-        return thisAmount;
+        return rentalAmount;
     }
 
     private String footer() {
