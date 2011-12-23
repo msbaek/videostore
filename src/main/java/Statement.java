@@ -24,7 +24,7 @@ public class Statement {
 
     public String generate() {
         initialize();
-        String result = "Rental Record for " + getCustomerName() + "\n";
+        String statementText = "Rental Record for " + getCustomerName() + "\n";
 
         for(Rental rental : rentals) {
             double thisAmount = 0;
@@ -53,15 +53,15 @@ public class Statement {
                 frequentRenterPoints++;
 
             // show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+            statementText += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
 
         // add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        statementText += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 
-        return result;
+        return statementText;
     }
 
     private void initialize() {
