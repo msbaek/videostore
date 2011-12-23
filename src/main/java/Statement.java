@@ -46,14 +46,11 @@ public class Statement {
     }
 
     private String rentalLine(Rental rental) {
-        String rentalLine = "";
         double rentalAmount = determineAmount(rental);
         frequentRenterPoints += determineFrequentRentalPoint(rental);
         totalAmount += rentalAmount;
 
-        // show figures for this rental
-        rentalLine += formatRentalLine(rental, rentalAmount);
-        return rentalLine;
+        return formatRentalLine(rental, rentalAmount);
     }
 
     private String formatRentalLine(Rental rental, double rentalAmount) {
