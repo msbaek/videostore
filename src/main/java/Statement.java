@@ -54,7 +54,7 @@ public class Statement {
     }
 
     private String formatRentalLine(Rental rental, double rentalAmount) {
-        return String.format("\t%s\t%.1f\n", rental.getMovie().getTitle(), rentalAmount);
+        return String.format("\t%s\t%.1f\n", rental.getTitle(), rentalAmount);
     }
 
     private int determineFrequentRentalPoint(Rental rental) {
