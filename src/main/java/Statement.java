@@ -48,17 +48,20 @@ public class Statement {
     private String rentalLine(Rental rental) {
         String rentalLine = "";
         double rentalAmount = determineAmount(rental);
-
-        // add frequent renter points
-        frequentRenterPoints++;
-        // add bonus for a two day new release rental
-        if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-            frequentRenterPoints++;
+        determineFrequentRentalPoint(rental);
 
         // show figures for this rental
         rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
         totalAmount += rentalAmount;
         return rentalLine;
+    }
+
+    private void determineFrequentRentalPoint(Rental rental) {
+        // add frequent renter points
+        frequentRenterPoints++;
+        // add bonus for a two day new release rental
+        if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
+        frequentRenterPoints++;
     }
 
     private double determineAmount(Rental rental) {
