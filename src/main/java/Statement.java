@@ -53,17 +53,6 @@ public class Statement {
         return formatRentalLine(rental, rentalAmount);
     }
 
-    private String formatRentalLine(Rental rental, double rentalAmount) {
-        return String.format("\t%s\t%.1f\n", rental.getTitle(), rentalAmount);
-    }
-
-    private int determineFrequentRentalPoint(Rental rental) {
-        boolean bonusIsEarned = (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1;
-        if (bonusIsEarned)
-            return 2;
-        return 1;
-    }
-
     private double determineAmount(Rental rental) {
         double rentalAmount = 0;
         switch (rental.getMovie().getPriceCode()) {
@@ -83,6 +72,18 @@ public class Statement {
         }
         return rentalAmount;
     }
+
+    private int determineFrequentRentalPoint(Rental rental) {
+        boolean bonusIsEarned = (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1;
+        if (bonusIsEarned)
+            return 2;
+        return 1;
+    }
+
+    private String formatRentalLine(Rental rental, double rentalAmount) {
+        return String.format("\t%s\t%.1f\n", rental.getTitle(), rentalAmount);
+    }
+
 
     private String footer() {
         return String.format(
