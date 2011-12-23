@@ -29,8 +29,7 @@ public class Statement {
         statementText += rentalLines();
 
         // add footer lines
-        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        statementText += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        statementText += "Amount owed is " + String.valueOf(totalAmount) + "\nYou earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 
         return statementText;
     }
