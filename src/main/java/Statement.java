@@ -49,10 +49,10 @@ public class Statement {
         String rentalLine = "";
         double rentalAmount = determineAmount(rental);
         frequentRenterPoints += determineFrequentRentalPoint(rental);
+        totalAmount += rentalAmount;
 
         // show figures for this rental
         rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
-        totalAmount += rentalAmount;
         return rentalLine;
     }
 
