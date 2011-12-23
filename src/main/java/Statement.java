@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.Vector;
 
 public class Statement {
     private String customerName;
@@ -23,7 +21,7 @@ public class Statement {
     }
 
     public String generate() {
-        initialize();
+        clearTotals();
         String statementText = header();
         statementText += rentalLines();
         statementText += footer();
@@ -73,7 +71,7 @@ public class Statement {
         return String.format("Rental Record for %s\n", customerName);
     }
 
-    private void initialize() {
+    private void clearTotals() {
         totalAmount = 0;
         frequentRenterPoints = 0;
     }
