@@ -28,11 +28,13 @@ public class Statement {
         return statementText;
     }
 
-    private String footer() {
-        return String.format(
-                "Amount owed is %.1f\n" +
-                        "You earned %d frequent renter points",
-                totalAmount, frequentRenterPoints);
+    private void clearTotals() {
+        totalAmount = 0;
+        frequentRenterPoints = 0;
+    }
+
+    private String header() {
+        return String.format("Rental Record for %s\n", customerName);
     }
 
     private String rentalLines() {
@@ -70,13 +72,11 @@ public class Statement {
         return rentalLines;
     }
 
-    private String header() {
-        return String.format("Rental Record for %s\n", customerName);
-    }
-
-    private void clearTotals() {
-        totalAmount = 0;
-        frequentRenterPoints = 0;
+    private String footer() {
+        return String.format(
+                "Amount owed is %.1f\n" +
+                        "You earned %d frequent renter points",
+                totalAmount, frequentRenterPoints);
     }
 
     public double getTotal() {
