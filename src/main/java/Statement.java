@@ -52,8 +52,12 @@ public class Statement {
         totalAmount += rentalAmount;
 
         // show figures for this rental
-        rentalLine += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
+        rentalLine += formatRentalLine(rental, rentalAmount);
         return rentalLine;
+    }
+
+    private String formatRentalLine(Rental rental, double rentalAmount) {
+        return "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
     }
 
     private int determineFrequentRentalPoint(Rental rental) {
