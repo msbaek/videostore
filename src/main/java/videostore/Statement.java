@@ -6,7 +6,6 @@ import java.util.List;
 public class Statement {
     private String customerName;
     private List<Rental> rentals = new ArrayList<Rental>();
-    private double total;
     private int frequentRenterPoints;
     private double totalAmount;
 
@@ -16,10 +15,6 @@ public class Statement {
 
     public void addRental(Rental arg) {
         rentals.add(arg);
-    }
-
-    public String getCustomerName() {
-        return customerName;
     }
 
     public String generate() {
