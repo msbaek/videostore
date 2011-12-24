@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import videostore.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -65,7 +66,7 @@ public class VideoStoreTest {
         statement.addRental(new Rental(regular2, 2));
         statement.addRental(new Rental(regular3, 3));
         assertEquals(
-                "Rental Record for Customer\n" +
+                "videostore.Rental Record for Customer\n" +
                         "\tRegular 1\t2.0\n" +
                         "\tRegular 2\t2.0\n" +
                         "\tRegular 3\t3.5\n" +

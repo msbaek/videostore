@@ -1,3 +1,5 @@
+package videostore;
+
 public abstract class Movie {
 
     public static final int CHILDRENS = 2;

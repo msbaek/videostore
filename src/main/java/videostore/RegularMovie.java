@@ -1,6 +1,8 @@
-public class ChildrensMovie extends Movie {
-    public ChildrensMovie(String title) {
-        super(title, Movie.CHILDRENS);
+package videostore;
+
+public class RegularMovie extends Movie {
+    public RegularMovie(String title) {
+        super(title, REGULAR);
     }
 
     double determineAmount(int daysRented) {

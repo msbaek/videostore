@@ -1,4 +1,4 @@
-//From book: 'Refactoring' by Martin Fowler
+package videostore;//From book: 'Refactoring' by Martin Fowler
 //This is the original code before refactoring begins
 
 public class Rental {
