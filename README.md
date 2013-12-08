@@ -2,7 +2,7 @@
 * switch 문장은 polymorhic dispatch를 사용해서 제거해야 case 문장에 존재하는 코드들로 부터의 영향을 최소화할 수 있다.
 
 # 사전 준비
-* git co -b remove-switch-stmt 88c110cd7191539ae44e185cf3a46a7502cc0672
+* git co -b remove-switch-stmt origin/remove-switch-stmt
 
 # 1. subclassing
 * Movie 클래스의 determineAmount 메소드는 type code에 의존하고 있다.
