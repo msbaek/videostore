@@ -26,3 +26,9 @@
 ## 2-2. blue phase
 * remove unused code
 * eclEmma의 code coverage를 수행하면서 반복적으로 각 클래스의 사용되지 않는 코드들을 제거한다.
+
+# 3. 리팩토링 전후 비교
+
+![Alt text](https://monosnap.com/image/yg53Fq2NU5y8IrP7vPyxJmFoskJtWT.png)
+
+![Alt text](https://monosnap.com/image/PVvdQxDBhpY3U77BQFgQj0OkPUVUhc.png)
